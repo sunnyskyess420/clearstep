@@ -35,6 +35,21 @@ export const metadata: Metadata = {
       "Free DBT tools that help in the moment and over time.",
     siteName: "ClearStep",
     type: "website",
+    images: [
+      {
+        url: "/og-image.png",
+        width: 1080,
+        height: 1080,
+        alt: "ClearStep — Free DBT tools for real-life coping, learning, and support.",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "ClearStep — Practical DBT Tools for Real-Life Coping",
+    description:
+      "Free DBT tools that help in the moment and over time.",
+    images: ["/og-image.png"],
   },
 };
 
