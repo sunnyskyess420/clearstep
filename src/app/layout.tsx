@@ -1,22 +1,28 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import { Instrument_Serif, Hanken_Grotesk } from "next/font/google";
 import "./globals.css";
 
-
-const geistSans = Geist({
-  variable: "--font-geist-sans",
+const instrumentSerif = Instrument_Serif({
+  variable: "--font-serif-display",
   subsets: ["latin"],
+  weight: "400",
+  style: ["normal", "italic"],
+  display: "swap",
 });
 
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
+const hankenGrotesk = Hanken_Grotesk({
+  variable: "--font-hanken",
   subsets: ["latin"],
+  display: "swap",
 });
 
 export const metadata: Metadata = {
-  title: "ClearStep — Practical DBT Tools for Real-Life Coping",
+  metadataBase: new URL(
+    process.env.NEXT_PUBLIC_SITE_URL ?? "https://clearstep-mocha.vercel.app",
+  ),
+  title: "ClearStep — Five free coping and DBT tools in one calm place",
   description:
-    "Free DBT tools that help in the moment and over time. Coping skills menus, skill references, and a structured learning platform — all in one place.",
+    "ClearStep is one home for five free tools: Calm Router, Worry Window, Glimmer Journal, Emotion Mapper and DBT Skills Reference. Each card names the approach it is built on — DBT, CBT, polyvagal theory or self-monitoring.",
   keywords: [
     "DBT",
     "dialectical behavior therapy",
@@ -30,9 +36,9 @@ export const metadata: Metadata = {
   ],
   authors: [{ name: "ClearStep" }],
   openGraph: {
-    title: "ClearStep — Practical DBT Tools for Real-Life Coping",
+    title: "ClearStep — Five free coping and DBT tools in one calm place",
     description:
-      "Free DBT tools that help in the moment and over time.",
+      "Five free tools for coping in the moment and building skills over time — DBT, CBT and polyvagal-based.",
     siteName: "ClearStep",
     type: "website",
     images: [
@@ -40,15 +46,15 @@ export const metadata: Metadata = {
         url: "/og-image.png",
         width: 1200,
         height: 630,
-        alt: "ClearStep — Free DBT tools for real-life coping, learning, and support.",
+        alt: "ClearStep — free coping and DBT tools in one place.",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "ClearStep — Practical DBT Tools for Real-Life Coping",
+    title: "ClearStep — Five free coping and DBT tools in one calm place",
     description:
-      "Free DBT tools that help in the moment and over time.",
+      "Five free tools for coping in the moment and building skills over time.",
     images: ["/og-image.png"],
   },
 };
@@ -59,12 +65,12 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className="dark" suppressHydrationWarning>
-      <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased bg-background text-foreground`}
-      >
-        {children}
-      </body>
+    <html
+      lang="en"
+      suppressHydrationWarning
+      className={`${instrumentSerif.variable} ${hankenGrotesk.variable}`}
+    >
+      <body className="antialiased">{children}</body>
     </html>
   );
 }
