@@ -169,7 +169,14 @@ main, header, footer{ position:relative; z-index:1; }
 .theme-btn .i-moon{ display:none; }
 html[data-theme="dark"] .theme-btn .i-sun{ display:none; }
 html[data-theme="dark"] .theme-btn .i-moon{ display:block; }
-@media (max-width:720px){ .head-nav a.nav-hide{ display:none; } }
+/* Nav links stay visible at every width. Below 720px they used to be hidden,
+   which left phone visitors with no way to reach the tool list or About — the
+   header was just a logo and a theme button. Spacing tightens below 400px so
+   the row still fits on a 320px screen without overflowing. */
+@media (max-width:400px){
+  .head-nav{ gap:2px; }
+  .head-nav a{ padding:9px 9px; font-size:.88rem; }
+}
 
 /* ============================================================
    4. Hero

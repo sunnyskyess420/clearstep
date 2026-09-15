@@ -468,12 +468,8 @@ export default function Home() {
             <span className="brand-name">ClearStep</span>
           </a>
           <nav className="head-nav" aria-label="Primary">
-            <a className="nav-hide" href="#tools">
-              Tools
-            </a>
-            <a className="nav-hide" href="#about">
-              About
-            </a>
+            <a href="#tools">Tools</a>
+            <a href="#about">About</a>
             <button
               className="theme-btn"
               type="button"
