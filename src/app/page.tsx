@@ -656,7 +656,7 @@ export default function Home() {
               <div>
                 <a
                   className="btn btn-solid"
-                  href="https://dbt-skills-reference.vercel.app/"
+                  href="https://dbt-skills-reference.vercel.app/?v=crisis"
                   target="_blank"
                   rel="noopener noreferrer"
                 >
